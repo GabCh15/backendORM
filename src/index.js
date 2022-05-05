@@ -2,6 +2,11 @@ const express = require("express");
 const app = express();
 const routerController = require("./routes/routerController");
 const cors = require("cors");
+const { defineDB, db } = require("./models/DB.js");
+
+defineDB();
+
+db.sequelize.sync();
 
 app.use(express.json({ limit: "100mb" }));
 
