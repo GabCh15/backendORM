@@ -8,5 +8,10 @@ router.post("/addPlayer", sportsDBController.addPlayer);
 
 router.post("/addMatch", sportsDBController.addMatch);
 
+router.post("/getTeamWithPlayers", sportsDBController.getTeamWithPlayers);
+
+router.post("/addTeamsToMatch", sportsDBController.addTeamsToMatch);
+
+router.post("/getMatchWithTeams", sportsDBController.getMatchWithTeams);
 
 module.exports = router;
