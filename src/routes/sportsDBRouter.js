@@ -1,17 +1,22 @@
-const express = require("express");
-const router = express.Router();
-const sportsDBController = require("../controllers/sportsDBController");
+const express = require('express')
+const router = express.Router()
+const sportsDBController = require('../controllers/sportsDBController')
 
-router.post("/addTeam", sportsDBController.addTeam);
+router.use((req, res, next) => {
+    console.log(req.body)
+    next()
+})
 
-router.post("/addPlayer", sportsDBController.addPlayer);
+router.post('/addTeam', sportsDBController.addTeam)
 
-router.post("/addMatch", sportsDBController.addMatch);
+router.post('/addPlayer', sportsDBController.addPlayer)
 
-router.post("/getTeamWithPlayers", sportsDBController.getTeamWithPlayers);
+router.post('/addMatch', sportsDBController.addMatch)
 
-router.post("/addTeamsToMatch", sportsDBController.addTeamsToMatch);
+router.post('/getTeamWithPlayers', sportsDBController.getTeamWithPlayers)
 
-router.post("/getMatchWithTeams", sportsDBController.getMatchWithTeams);
+router.post('/addTeamsToMatch', sportsDBController.addTeamsToMatch)
 
-module.exports = router;
+router.post('/getMatchWithTeams', sportsDBController.getMatchWithTeams)
+
+module.exports = router

@@ -12,7 +12,7 @@ const addTeam = async (data) => {
 };
 
 const addPlayer = async (data) => {
-  data["team_id"] = getIdByName("Team", data["team"]);
+  data["team_id"] = await getIdByName("Team", data["team"]);
   await insert("Player", data);
 };
 

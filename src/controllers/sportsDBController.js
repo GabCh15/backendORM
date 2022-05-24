@@ -11,11 +11,11 @@ module.exports = {
   },
   addMatch: async (req, res) => {
     await dbController.addMatch(req.body.match);
-    res.send(req.body.player);
+    res.send(req.body.match);
   },
   addTeamsToMatch: async (req, res) => {
     await dbController.addTeamsToMatch(req.body);
-    res.send(req.body.player);
+    res.send(req.body);
   },
   getTeamWithPlayers:
   async (req, res) => {
